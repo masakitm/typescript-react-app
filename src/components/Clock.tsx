@@ -7,12 +7,8 @@ import ClockBackground from './ClockBackground'
 
 const Enhance = compose(
   withStateHandlers(
-    { 
-      time: '' 
-    },
-    {
-      updateTime: () => (time: string) => ({ time })
-    }
+    { time: '' },
+    { updateTime: () => (time: string) => ({ time }) }
   ),
   lifecycle({
     componentDidMount() {
@@ -38,11 +34,11 @@ const Container = styled.div`
   height: 100vh;
   justify-content: center;
   align-items: center;
+  color: #fff;
 `
 
 const Timer = styled.div`
   z-index: 1;
-  font-size: 12vw;
-  color: #fff;
-  font-family: 'Playfair Display', serif;
+  font-size: 9vw;
+  font-family: 'Roboto', sans-serif;
 `
