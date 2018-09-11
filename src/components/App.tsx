@@ -1,11 +1,14 @@
 import * as React from 'react'
 
-import Clock from './Clock'
+import GoogleMapPage from '../containers/GoogleMapPage'
 
-const App = () => (
-  <div>
-    <Clock />
-  </div>
-)
+const App = () => {
+  return (
+    <div>
+      <h1>緯度経度検索</h1>
+      <GoogleMapPage />
+    </div>
+  )
+}
 
 export default App

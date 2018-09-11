@@ -1,0 +1,28 @@
+{
+  "rulesDirectory": [
+    "tslint-plugin-prettier"
+  ],
+  "extends": [
+    "tslint-config-standard",
+    "tslint-react",
+    "tslint-config-prettier"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "config/**/*.js",
+      "node_modules/**/*.ts"
+    ]
+  },
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "prettier": [
+      true,
+      {
+        "singleQuote": true,
+        "semi": false
+      }
+    ]
+  }
+}

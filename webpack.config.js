@@ -1,3 +1,5 @@
+const webpack = require('webpack')
+
 module.exports = {
   mode: "development",
   entry: "./src/index.tsx",
@@ -7,18 +9,16 @@ module.exports = {
   },
   devtool: "source-map",
   resolve: {
-    extensions: [
-      ".ts",
-      ".tsx",
-      ".js",
-      ".json"
-    ]
+    extensions: [".ts", ".tsx", ".js", ".json"]
   },
   module: {
     rules: [
-      { 
+      {
         test: /\.tsx?$/,
-        loader: "awesome-typescript-loader"
+        loader: [
+          "awesome-typescript-loader",
+          "tslint-loader"
+        ]
       },
       {
         enforce: "pre",
@@ -27,8 +27,9 @@ module.exports = {
       }
     ]
   },
-  externals: {
-    "react": "React",
-    "react-dom": "ReactDOM"
-  }
+  plugins: [
+    new webpack.DefinePlugin({
+      "process.env.NODE_URL": JSON.stringify("http://maps.googleapis.com/maps/api/geocode/json")
+    })
+  ]
 }
